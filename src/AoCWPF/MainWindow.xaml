@@ -1,0 +1,27 @@
+﻿<Window x:Class="AoCWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AoCWPF"
+        mc:Ignorable="d"
+        Title="AoC 2024" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Resources >
+            <Style TargetType="Button" >
+                <Setter Property="Padding" Value="5,5,5,5" />
+                <Setter Property="Margin" Value="5,2,5,2" />
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnDay1" Content="Day 1" Grid.Row="0"/>
+        <Button x:Name="btnDay2" Content="Day 2" Grid.Row="1" />
+    </Grid>
+</Window>

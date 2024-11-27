@@ -1,0 +1,5 @@
+.vs/
+src/BusinessLogic/bin/
+src/BusinessLogic/obj/
+src/AoCWPF/bin/
+src/AoCWPF/obj/
