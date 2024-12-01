@@ -1,0 +1,23 @@
+The value is multiplied by 10 to shift the current digits to the left, making room for the new digit. 
+When parsing a string of digits into an integer, each new digit needs to be added to the rightmost position of the current number.
+Multiplying the current value by 10 achieves this by shifting all existing digits one place to the left. For example:
+
+Initial value = 0
+
+First Digit ('3'):
+value = value * 10 + (i - '0')
+value = 0 * 10 + (3 - '0')
+value = 0 + 3
+value = 3
+
+Second Digit ('5'):
+value = value * 10 + (i - '0')
+value = 3 * 10 + (5 - '0')
+value = 30 + 5
+value = 
+
+Third Digit ('7'):
+value = value * 10 + (i - '0')
+value = 35 * 10 + (7 - '0')
+value = 350 + 7
+value = 357

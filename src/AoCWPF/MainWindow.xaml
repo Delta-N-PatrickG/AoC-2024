@@ -21,7 +21,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnDay1" Content="Day 1" Grid.Row="0"/>
+        <Button x:Name="btnDay1" Content="Day 1" Grid.Row="0" Click="btnDay1_Click"/>
         <Button x:Name="btnDay2" Content="Day 2" Grid.Row="1" />
     </Grid>
 </Window>

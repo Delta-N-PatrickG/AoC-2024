@@ -9,11 +9,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="InputFiles\Day1\part1.txt" />
+    <None Remove="InputFiles\Day1\part2.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="InputFiles\Day1\part1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="InputFiles\Day1\part2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="InputFiles\Day1\" />
     <Folder Include="InputFiles\Day2\" />
   </ItemGroup>
 

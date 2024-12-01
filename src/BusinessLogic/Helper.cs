@@ -5,8 +5,9 @@ using Businesslogic.Enums;
 using Businesslogic.Extensions;
 using Pastel;
 
-namespace Businesslogic
+namespace BusinessLogic
 {
+
     /// <summary>
     /// Provides helper methods for file operations and result writing.
     /// </summary>
@@ -73,5 +74,12 @@ namespace Businesslogic
         {
             WriteResult((x) => func(x).ToString(), fileType, result.ToString());
         }
+
+        public static void GetFileData(string filePath, out List<string> Data, out string RawData)
+        {
+            Data = File.ReadLines(filePath).ToList();
+            RawData = File.ReadAllText($"{filePath}");
+        }
+        
     }
 }
