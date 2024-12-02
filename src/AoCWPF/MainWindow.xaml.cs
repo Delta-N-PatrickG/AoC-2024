@@ -15,11 +15,24 @@ namespace AoCWPF
 
         private void btnDay1_Click(object sender, RoutedEventArgs e)
         {
-            var solution = new Day1();
-            var resultPart1 = solution.Part1();
-            var resultPart2 = solution.Part2();
+            var solutionPart1 = new Day1(1, 1);
+            var resultPart1 = solutionPart1.Part1();
+
+            var solutionPart2 = new Day1(1, 2);
+            var resultPart2 = solutionPart2.Part2();
             
             MessageBox.Show($"Day 1 \npart1: {resultPart1} \npart2: {resultPart2}");
+        }
+
+        private void btnDay2_Click(object sender, RoutedEventArgs e)
+        {
+            var solutionPart1 = new Day2(2, 1);
+            var resultPart1 = solutionPart1.Part1();
+
+            var solutionPart2 = new Day2(2, 2);
+            var resultPart2 = solutionPart2.Part2();
+
+            MessageBox.Show($"Day 2 \npart1: {resultPart1} \npart2: {resultPart2}");
         }
     }
 }

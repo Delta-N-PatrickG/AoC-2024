@@ -8,42 +8,35 @@ namespace AoCWPF.Solutions
     /// <summary>
     /// Solution for Day 1 of the Advent of Code challenge.
     /// </summary>
-    public class Day1
+    public class Day1(int day, int part) : DayBase(day, part)
     {
+        private int _day { get; set; } = day;
+        private int _part { get; set; } = part;
+
         private LocationData _locationData { get; set; }
-        private List<string> Input { get; set; }
-        private string RawInput { get; set; }
 
         /// <summary>
         /// Solves Part 1 of Day 1.
         /// </summary>
         /// <returns>The result of the calculation for Part 1.</returns>
-        public int Part1()
+        public override string Part1()
         {
-            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"InputFiles\Day1\part1.txt");
-            Helper.GetFileData(path, out var input, out var rawInput);
-            Input = input;
-            RawInput = rawInput;
             _locationData = ParseLocationData();
             var result = GetDifferenceSum();
             Debug.WriteLine($"Result of Day 1 Part 1: {result}");
-            return result;
+            return result.ToString();
         }
 
         /// <summary>
         /// Solves Part 2 of Day 1.
         /// </summary>
         /// <returns>The result of the calculation for Part 2.</returns>
-        public int Part2()
+        public override string Part2()
         {
-            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"InputFiles\Day1\part2.txt");
-            Helper.GetFileData(path, out var input, out var rawInput);
-            Input = input;
-            RawInput = rawInput;
             _locationData = ParseLocationData();
             var result = CalculateSimilarityScore();
             Debug.WriteLine($"Result of Day 1 Part 2: {result}");
-            return result;
+            return result.ToString();
         }
 
         /// <summary>
