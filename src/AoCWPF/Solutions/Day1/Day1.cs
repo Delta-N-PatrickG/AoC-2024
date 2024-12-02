@@ -20,7 +20,7 @@ namespace AoCWPF.Solutions
         /// <returns>The result of the calculation for Part 1.</returns>
         public int Part1()
         {
-            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"InputFiles\Day1\part1.txt");
+            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"InputFiles\Day1\part1.txt");
             Helper.GetFileData(path, out var input, out var rawInput);
             Input = input;
             RawInput = rawInput;
@@ -36,7 +36,7 @@ namespace AoCWPF.Solutions
         /// <returns>The result of the calculation for Part 2.</returns>
         public int Part2()
         {
-            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"InputFiles\Day1\part2.txt");
+            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"InputFiles\Day1\part2.txt");
             Helper.GetFileData(path, out var input, out var rawInput);
             Input = input;
             RawInput = rawInput;
