@@ -1,7 +1,4 @@
 ﻿using System.Diagnostics;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Windows.Controls;
 
 namespace AoCWPF.Solutions
 {
