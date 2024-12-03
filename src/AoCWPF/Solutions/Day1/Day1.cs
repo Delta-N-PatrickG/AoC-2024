@@ -16,7 +16,7 @@ namespace AoCWPF.Solutions
         private LocationData _locationData { get; set; }
 
         /// <summary>
-        /// Solves Part 1 of Day 1.
+        /// Executes the logic for Part 1 of the challenge.
         /// </summary>
         /// <returns>The result of the calculation for Part 1.</returns>
         public override string Part1()
@@ -28,7 +28,7 @@ namespace AoCWPF.Solutions
         }
 
         /// <summary>
-        /// Solves Part 2 of Day 1.
+        /// Executes the logic for Part 2 of the challenge.
         /// </summary>
         /// <returns>The result of the calculation for Part 2.</returns>
         public override string Part2()

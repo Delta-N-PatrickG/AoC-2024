@@ -45,8 +45,8 @@ namespace AoCWPF.Solutions
         public long SolveRegex(string input, string regex)
         {
             var matches = Regex.Matches(input, regex, RegexOptions.Multiline);
-            long result = 0;
-            bool enabled = true;
+            var result = 0L;
+            var enabled = true;
 
             foreach (Match match in matches)
             {
@@ -61,8 +61,8 @@ namespace AoCWPF.Solutions
                     default:
                         if (enabled)
                         {
-                            int num1 = int.Parse(match.Groups[1].Value);
-                            int num2 = int.Parse(match.Groups[2].Value);
+                            var num1 = int.Parse(match.Groups[1].Value);
+                            var num2 = int.Parse(match.Groups[2].Value);
                             result += num1 * num2;
                         }
                         break;
