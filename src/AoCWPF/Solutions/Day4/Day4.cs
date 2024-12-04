@@ -120,50 +120,25 @@ namespace AoCWPF.Solutions
         {
             var count = 0;
 
-            //// top left = r - 1, c - 1
-            //// top right = r - 1, c + 1
-            //// Bottom left = r + 1, c - 1
-            //// Bottom right = r + 1, c + 1
-
-
-            // M top left, top right
-            // S bottom left, bottom right
-            if (IsValid(grid, r - 1, c - 1, "M") && // top left
-                IsValid(grid, r - 1, c + 1, "M") && // top right
-                IsValid(grid, r + 1, c - 1, "S") && // bottom left
-                IsValid(grid, r + 1, c + 1, "S")) // bottom right
+            // Define the positions to check for 'M' and 'S'
+            var positions = new (int, int, string)[]
             {
-                count++;
-            }
+                (r - 1, c - 1, "M"), (r - 1, c + 1, "M"), (r + 1, c - 1, "S"), (r + 1, c + 1, "S"),
+                (r - 1, c - 1, "M"), (r + 1, c - 1, "M"), (r - 1, c + 1, "S"), (r + 1, c + 1, "S"),
+                (r + 1, c - 1, "M"), (r + 1, c + 1, "M"), (r - 1, c - 1, "S"), (r - 1, c + 1, "S"),
+                (r - 1, c + 1, "M"), (r + 1, c + 1, "M"), (r - 1, c - 1, "S"), (r + 1, c - 1, "S")
+            };
 
-            // M top left, bottom left
-            // S top right, bottom right
-            if (IsValid(grid, r - 1, c - 1, "M") && // top left
-                IsValid(grid, r + 1, c - 1, "M") && // bottom left
-                IsValid(grid, r - 1, c + 1, "S") && // top right
-                IsValid(grid, r + 1, c + 1, "S")) // bottom right
+            // Check the positions in groups of four
+            for (int i = 0; i < positions.Length; i += 4)
             {
-                count++;
-            }
-
-            // M bottom left, bottom right
-            // S top left, top right
-            if (IsValid(grid, r + 1, c - 1, "M") && // bottom left
-                IsValid(grid, r + 1, c + 1, "M") && // bottom right
-                IsValid(grid, r - 1, c - 1, "S") && // top left
-                IsValid(grid, r - 1, c + 1, "S")) // top right
-            {
-                count++;
-            }
-
-            // M top right, bottom right
-            // S top left, bottom left
-            if (IsValid(grid, r - 1, c + 1, "M") && // top right
-                IsValid(grid, r + 1, c + 1, "M") && // bottom right
-                IsValid(grid, r - 1, c - 1, "S") && // top left
-                IsValid(grid, r + 1, c - 1, "S")) // bottom left
-            {
-                count++;
+                if (IsValid(grid, positions[i].Item1, positions[i].Item2, positions[i].Item3) &&
+                    IsValid(grid, positions[i + 1].Item1, positions[i + 1].Item2, positions[i + 1].Item3) &&
+                    IsValid(grid, positions[i + 2].Item1, positions[i + 2].Item2, positions[i + 2].Item3) &&
+                    IsValid(grid, positions[i + 3].Item1, positions[i + 3].Item2, positions[i + 3].Item3))
+                {
+                    count++;
+                }
             }
 
             return count;
@@ -174,7 +149,7 @@ namespace AoCWPF.Solutions
             var isValid = r >= 0 && r < grid.Count && c >= 0 && c < grid[0].Count && grid[r][c] == expected;
             if (!isValid)
             {
-                Debug.WriteLine($"Invalid position or character at ({r}, {c}): expected '{expected}', found '{(r >= 0 && r < rows && c >= 0 && c < cols ? grid[r][c] : "out of bounds")}'");
+                Debug.WriteLine($"Invalid position or character at ({r}, {c}): expected '{expected}', found '{(r >= 0 && r < grid.Count && c >= 0 && c < grid[0].Count ? grid[r][c] : "out of bounds")}'");
             }
             return isValid;
         }
