@@ -41,9 +41,12 @@ namespace AoCWPF.Solutions
         /// <returns>The result of part 2 as a string.</returns>
         public override string Part2()
         {
+            var sw = new Stopwatch();
+            sw.Start();
             _grid = GetGrid();
             var result = MASCrossCount(_grid);
             Debug.WriteLine($"Result of Day {_day} Part {_part}: {result}");
+            Debug.WriteLine($"Time: {sw.ElapsedMilliseconds} ms");
             return result.ToString();
         }
 
@@ -188,10 +191,10 @@ namespace AoCWPF.Solutions
         private bool IsValid(List<List<string>> grid, int r, int c, string expected)
         {
             var isValid = r >= 0 && r < grid.Count && c >= 0 && c < grid[0].Count && grid[r][c] == expected;
-            if (!isValid)
-            {
-                Debug.WriteLine($"Invalid position or character at ({r}, {c}): expected '{expected}', found '{(r >= 0 && r < grid.Count && c >= 0 && c < grid[0].Count ? grid[r][c] : "out of bounds")}'");
-            }
+            //if (!isValid)
+            //{
+            //    Debug.WriteLine($"Invalid position or character at ({r}, {c}): expected '{expected}', found '{(r >= 0 && r < grid.Count && c >= 0 && c < grid[0].Count ? grid[r][c] : "out of bounds")}'");
+            //}
             return isValid;
         }
     }
