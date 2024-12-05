@@ -89,12 +89,10 @@ namespace AoCWPF.Solutions
         private int SolvePart2()
         {
             var correctUpdatesMiddlePages = new List<int>();
-            var incorrectLines = new List<List<int>>();
             foreach (var update in _updates)
             {
                 if (!IsCorrectOrder(update))
                 {
-                    incorrectLines.Add(update);
                     var sortedList = ReorderUpdate(update);
                     correctUpdatesMiddlePages.Add(MiddlePage(sortedList));
                 }
