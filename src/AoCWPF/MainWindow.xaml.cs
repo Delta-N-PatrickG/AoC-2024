@@ -20,7 +20,7 @@ namespace AoCWPF
 
             var solutionPart2 = new Day1(1, 2);
             var resultPart2 = solutionPart2.Part2();
-            
+
             MessageBox.Show($"Day 1 \npart1: {resultPart1} \npart2: {resultPart2}");
         }
 
@@ -55,6 +55,17 @@ namespace AoCWPF
             var resultPart2 = solutionPart2.Part2();
 
             MessageBox.Show($"Day 4 \npart1: {resultPart1} \npart2: {resultPart2}");
+        }
+
+        private void btnDay5_Click(object sender, RoutedEventArgs e)
+        {
+            var solutionPart1 = new Day5(5, 1);
+            var resultPart1 = solutionPart1.Part1();
+
+            var solutionPart2 = new Day5(5, 2);
+            var resultPart2 = solutionPart2.Part2();
+
+            MessageBox.Show($"Day 5 \npart1: {resultPart1} \npart2: {resultPart2}");
         }
     }
 }
