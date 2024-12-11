@@ -19,6 +19,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -29,5 +30,6 @@
         <Button x:Name="btnDay3" Content="Day 3" Grid.Row="2" Click="btnDay3_Click"/>
         <Button x:Name="btnDay4" Content="Day 4" Grid.Row="3" Click="btnDay4_Click"/>
         <Button x:Name="btnDay5" Content="Day 5" Grid.Row="4" Click="btnDay5_Click"/>
+        <Button x:Name="btnDay6" Content="Day 6" Grid.Row="5" Click="btnDay6_Click"/>
     </Grid>
 </Window>

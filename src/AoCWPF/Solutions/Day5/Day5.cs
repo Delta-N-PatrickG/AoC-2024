@@ -34,9 +34,12 @@ namespace AoCWPF.Solutions
         /// <returns>The result of part 2 as a string.</returns>
         public override string Part2()
         {
+            var sw = new Stopwatch();
+            sw.Start();
             GetData();
             var result = SolvePart2();
-            Debug.WriteLine($"Result of Day {_day} Part {_part}: {result}");
+            sw.Stop();
+            Debug.WriteLine($"Result of Day {_day} Part {_part}: {result}, time elapsed {sw.ElapsedMilliseconds} ms");
             return result.ToString();
         }
 
